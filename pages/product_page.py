@@ -1,5 +1,6 @@
 from .base_page import BasePage
 from .locators import AddProductToBasket
+from selenium.webdriver.common.by import By
 
 
 class ProductPage(BasePage):
@@ -18,3 +19,11 @@ class ProductPage(BasePage):
     def should_compare_price_in_basket_and_main_paig(self):
         assert self.browser.find_element(*AddProductToBasket.PRICE_PRODUCT_IN_BASKET).text == self.browser.find_element(
              *AddProductToBasket.PRICE_PRODUCT).text, "Prices are not equal"
+
+    def should_not_be_success_message(self):
+        assert not self.is_element_present(*AddProductToBasket.SUCCESS_MESSAGE), \
+            "Success message is presented, but should not be"
+
+    def should_not_disappeared(self):
+        assert self.is_disappeared(*AddProductToBasket.SUCCESS_MESSAGE), \
+            "Success message does not disappeared"

@@ -13,3 +13,12 @@ class AddProductToBasket():
     PRICE_PRODUCT = (By.CSS_SELECTOR, ".product_main .price_color")
     NAME_PRODUCT_IN_BASKET = (By.CSS_SELECTOR, ".alert-success:nth-child(1) strong")
     NAME_PRODUCT = (By.CSS_SELECTOR, ".product_main h1")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".alert:nth-child(1)")
+    BASKET_EMPTY = (By.CSS_SELECTOR, "#content_inner")
+    BASKET_ITEMS = (By.CSS_SELECTOR, ".basket-items")
+
+class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    BASKET_LINK = (By.CSS_SELECTOR, ".basket-mini .btn-default:nth-child(1)")
+
+
